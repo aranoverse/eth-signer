@@ -110,10 +110,9 @@ func main() {
 	privateKey := loadPrivateKey()
 
 	if result, err := SignValidator(validatorAgentAddr, msg, privateKey); err != nil {
-		panic(err)
-	} else {
-		if _, err := fmt.Fprintf(os.Stdout, "%v\n", result); err != nil {
-			panic(err)
-		}
+	    panic(err)
+	} else if _, err := fmt.Fprintf(os.Stdout, "%v\n", result); err != nil {
+	    panic(err)
 	}
 }
+
